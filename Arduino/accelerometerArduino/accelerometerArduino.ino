@@ -15,6 +15,9 @@ int ov3= 0;
 void setup() {
   // initialize serial communications at 9600 bps:
   Serial.begin(9600);
+
+
+  // regular: ~520, ~510, ~630
  
 }
 
@@ -39,17 +42,17 @@ void loop() {
   
   // print the results to the serial monitor:
   //Serial.print("Xsensor1 = " );                       
-  Serial.print(sv1);      
+  //Serial.print(sv1);      
 //  Serial.print("\t output1 = ");      
 //  Serial.println(ov1);   
- 
-  Serial.print("," );                       
-  Serial.print(sv2);      
+// 
+//  Serial.print("," );                       
+//  Serial.print(sv2);      
 //  Serial.print("\t output2 = ");      
 //  Serial.println(ov2);   
 
-  Serial.print("," );                       
-  Serial.print(sv3);      
+//  Serial.print("," );                       
+//  Serial.print(sv3);      
 //  Serial.print("\t output3 = ");      
 //  Serial.println(ov3);   
 
