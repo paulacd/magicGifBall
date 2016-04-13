@@ -2,14 +2,16 @@ import os
 import os.path 
 import random
 import sys
-# import serial
+import serial
 import webbrowser
+import subprocess
 
 gifs = list() #populate gifs 
 
-gif_path = "/Users/paulaceballos/Documents/ITP/Spring_2016/_Readymades/magicGifBall/gifs"
+gif_path = "/home/pi/magicGifBall/gifs"
 
-static_gif_path = '/Users/paulaceballos/Documents/ITP/Spring_2016/_Readymades/magicGifBall/static.gif'
+
+static_gif_path = '/home/pi/magicGifBall/static.gif'
 
 for subdir, dirs, files in os.walk(gif_path):
 	for f in files:
@@ -18,7 +20,7 @@ for subdir, dirs, files in os.walk(gif_path):
 
 
 print gifs
-ser = serial.Serial('/dev/ttyACM0', 9600)
+ser=serial.Serial('/dev/ttyACM0',9600)
 
 while True:
 	try:
@@ -34,13 +36,22 @@ while True:
 
 
 	if s == 1:
+                try:
+                        subprocess.call('killall gpicview', shell=1)
+                except:
+                        print 'no browser open yet'
 		print "YOU WANT A GIF!"
 		#randomly choose a gif
 		chosen_gif = random.choice(gifs)
 		#play gif
-		webbrowser.open_new_tab('file://'+chosen_gif)
+                webbrowser.open('file://'+chosen_gif, new=2)
+		#webbrowser.open_new_tab('file://'+chosen_gif)
 
 	elif s == 0:
+                try:
+                        subprocess.call('killall gpicview', shell=1)
+                except:
+                        print 'no browser open yet'
 
 		print "STATIC!!!"
 
