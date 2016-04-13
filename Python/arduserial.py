@@ -4,6 +4,7 @@ import random
 import sys
 import serial
 import webbrowser
+import subprocess
 
 gifs = list() #populate gifs 
 
@@ -35,13 +36,22 @@ while True:
 
 
 	if s == 1:
+                try:
+                        subprocess.call('killall gpicview', shell=1)
+                except:
+                        print 'no browser open yet'
 		print "YOU WANT A GIF!"
 		#randomly choose a gif
 		chosen_gif = random.choice(gifs)
 		#play gif
-		webbrowser.open_new_tab('file://'+chosen_gif)
+                webbrowser.open('file://'+chosen_gif, new=2)
+		#webbrowser.open_new_tab('file://'+chosen_gif)
 
 	elif s == 0:
+                try:
+                        subprocess.call('killall gpicview', shell=1)
+                except:
+                        print 'no browser open yet'
 
 		print "STATIC!!!"
 
