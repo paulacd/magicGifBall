@@ -2,14 +2,15 @@ import os
 import os.path 
 import random
 import sys
-# import serial
+import serial
 import webbrowser
 
 gifs = list() #populate gifs 
 
-gif_path = "/Users/paulaceballos/Documents/ITP/Spring_2016/_Readymades/magicGifBall/gifs"
+gif_path = "/home/pi/magicGifBall/gifs"
 
-static_gif_path = '/Users/paulaceballos/Documents/ITP/Spring_2016/_Readymades/magicGifBall/static.gif'
+
+static_gif_path = '/home/pi/magicGifBall/static.gif'
 
 for subdir, dirs, files in os.walk(gif_path):
 	for f in files:
@@ -18,7 +19,7 @@ for subdir, dirs, files in os.walk(gif_path):
 
 
 print gifs
-ser = serial.Serial('/dev/ttyACM0', 9600)
+ser=serial.Serial('/dev/ttyACM0',9600)
 
 while True:
 	try:
