@@ -31,6 +31,7 @@ void loop() {
     if (switchState == LOW) {
       // send out a 1 to play a gif
       Serial.println(1);
+      delay (5000);
 
       }
       else if (switchState == HIGH) {
