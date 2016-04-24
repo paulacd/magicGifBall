@@ -32,6 +32,9 @@ void loop() {
       // send out a 1 to play a gif
       Serial.println(1);
 
+      delay (5000);
+
+
       }
       else if (switchState == HIGH) {
         //send out a 0 to play static
