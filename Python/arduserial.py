@@ -44,7 +44,8 @@ while True:
 		#randomly choose a gif
 		chosen_gif = random.choice(gifs)
 		#play gif
-                webbrowser.open('file://'+chosen_gif, new=2)
+		subprocess.call(['chromium-browser', '--kiosk', 'file://'+chosen_gif])
+                #webbrowser.open('file://'+chosen_gif, new=2)
 		#webbrowser.open_new_tab('file://'+chosen_gif)
 
 	elif s == 0:
@@ -55,5 +56,5 @@ while True:
 
 		print "STATIC!!!"
 
-		webbrowser.open_new_tab('file://'+static_gif_path)
+		subprocess.call(['chromium-browser', '--kiosk', 'file://'+static_gif_path])
 
