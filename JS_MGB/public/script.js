@@ -9,7 +9,7 @@ var randomGif;
 //var sayings = ['lessen your leavings', 'slash your trash', 'trim your trash', 'dwindle your rubbish','step down your scraps', 'think about your trash'];
 
 window.addEventListener('load', function() {
-    for (var i = 0; i < 21; i++) {
+    for (var i = 0; i < 24; i++) {
         gifs.push(document.getElementById(i));
     }
 
@@ -56,7 +56,7 @@ socket.on('message', function(data) {
     if (data === 0) {
       // document.body.style.backgroundColor = 'blue';
       //hideAll(gifs);
-          for (var i = 0; i < 21; i++) {
+          for (var i = 0; i < 24; i++) {
         document.getElementById(i).style.display = 'none';
     }
       document.getElementById('static').style.display = 'block';
@@ -65,7 +65,7 @@ socket.on('message', function(data) {
         
         document.getElementById('static').style.display = 'none';
         //gifs[i].style.display = 'none';
-        for (var i = 0; i < 21; i++) {
+        for (var i = 0; i < 24; i++) {
         document.getElementById(i).style.display = 'none';
     }
         // randomGif =  Math.floor(Math.random(0, gifs.length));
